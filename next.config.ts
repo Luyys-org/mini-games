@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 import { PHASE_DEVELOPMENT_SERVER } from "next/constants";
 
-const repoBasePath = "/mini-games.github.io";
+const repoBasePath = "/mini-games";
 
 export default function nextConfig(phase: string): NextConfig {
   const isDevelopment = phase === PHASE_DEVELOPMENT_SERVER;
