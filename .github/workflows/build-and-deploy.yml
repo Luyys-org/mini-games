@@ -1,5 +1,11 @@
 name: Build and deploy to GitHub Pages
 
+permissions:
+  contents: write
+  actions: read
+  pages: write
+  id-token: write
+
 on:
   workflow_dispatch:
     inputs:
@@ -22,11 +28,6 @@ jobs:
   
   deploy-pages:
     needs: build-static
-    permissions:
-      contents: read
-      actions: read
-      pages: write
-      id-token: write
     uses: Luyys-org/workflows/.github/workflows/deploy-page.yml@main
     with:
       artifact-name: ${{ needs.build-static.outputs.artifact-name }}
